@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% for i in kab %}
+<h3><a href='{% url 'kab_detail' pk=i.pk %}'>Кабинет {{ i.number }}</a></h3>
+<p>{{ i.get_subject_display }}</p>
+{% endfor %}
+{% endblock %}
